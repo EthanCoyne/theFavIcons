@@ -4,6 +4,7 @@ $(function(){
   console.log('doc loaded');
   getBios();
 
+
   $('#bios').on('click', '.like', function(event){
     likeWho = $(this).attr('id');
     likeWho='/likes/'+likeWho;
@@ -23,7 +24,7 @@ function getBios(){
   // $('#bios').empty();
     bios.forEach(function(person){
       $('#bios').append('<li>'+'<img src="'+person.image+'"/><br>'+'Name: '+person.firstName+' '+person.lastName
-      +'<br>Bio: '+person.bio+'<br><button id="'+person.firstName+'"class="like">Like</button>&nbsp;&nbsp;<span id="'+person.lastName+'">0</span></li>');
+      +'<br>Bio: '+person.bio+'<br><button id="'+person.firstName+'"class="like">Like</button>&nbsp;&nbsp;<span id="'+person.lastName+'">' + person.likes + '</span></li>');
     });
 }
 
